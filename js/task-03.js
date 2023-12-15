@@ -1,24 +1,15 @@
 const inputName = document.querySelector('#name-input');
 const outputName = document.querySelector('#name-output');
 
-outputName.textContent = 'Anonymus';
+const defaultName = 'Anonymus';
+outputName.textContent = defaultName;
 
-function writeName(e) {
-    if (e.keyCode >= 65 && e.keyCode <= 90 && e.keyCode != 8) {
-        outputName.textContent += e.key;
+function writeName(event) {
+    if (event.target.value === '' || event.code == '32') {
+        outputName.textContent = defaultName;
+    } else {
+        outputName.textContent = event.target.value;
     }
-    // if (e.keyCode === 32) {
-    //     outputName.textContent = 'Anonymus';
-    // } else 
-    // else {
-    //     outputName.textContent = '';
-    // }
-
 }
 
 inputName.addEventListener('input', writeName);
-// 
-// inputName.addEventListener('keydown', (e) => {
-//     typedName.push(e.key);
-// })
-// console.log(typedName);
