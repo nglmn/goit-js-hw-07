@@ -1,25 +1,24 @@
 const inputName = document.querySelector('#name-input');
 const outputName = document.querySelector('#name-output');
 
-const wrongKeys = ['Backspace', 'ShiftRight', 'ShiftLeft', 'Tab', 'CapsLock', 'AltLeft', 'AltRight', 'MetaLeft', 'MetaRight', 'ArrowLeft', 'ArrowRight', 'ArrowDown', 'ArrowUp'];
-
+outputName.textContent = 'Anonymus';
 
 function writeName(e) {
-    if (e.code === 'Space') {
-        outputName.textContent = 'Anonymus';
+    if (e.keyCode >= 65 && e.keyCode <= 90 && e.keyCode != 8) {
+        outputName.textContent += e.key;
     }
-    if (!checkKey(e.code, wrongKeys)) {
-        outputName.textContent += e.key.trim();
-    }
+    // if (e.keyCode === 32) {
+    //     outputName.textContent = 'Anonymus';
+    // } else 
+    // else {
+    //     outputName.textContent = '';
+    // }
+
 }
 
-function checkKey(target, arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (target === arr[i]) {
-            return true;
-        }
-    }
-    return false;
-}
-
-inputName.addEventListener('keydown', writeName);
+inputName.addEventListener('input', writeName);
+// 
+// inputName.addEventListener('keydown', (e) => {
+//     typedName.push(e.key);
+// })
+// console.log(typedName);

@@ -1,15 +1,15 @@
-.container{
+.wrapper{
     width: 1440px;
     height: 848px;
     padding: 100px 156px;
     margin: 0 auto;
 }
 .gallery{
-    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 48px 24px;
     flex-wrap: wrap;
+    width: 100%;
 }
 .gallery-image{
     width: 360px;
