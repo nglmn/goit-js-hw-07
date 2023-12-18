@@ -5,7 +5,7 @@ const defaultName = 'Anonymus';
 outputName.textContent = defaultName;
 
 function writeName(event) {
-    if (event.target.value === '' || event.code == '32') {
+    if (event.target.value === '' && event.target.value === 'Space') {
         outputName.textContent = defaultName;
     } else {
         outputName.textContent = event.target.value;
