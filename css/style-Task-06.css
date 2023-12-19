@@ -1,0 +1,17 @@
+#controls{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #F6F6FE;
+}
+#boxes{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 32px;
+    border-radius: 8px;
+    background: #F6F6FE;
+    margin-top: 16px;
+}

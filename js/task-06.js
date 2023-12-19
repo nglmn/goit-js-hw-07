@@ -10,16 +10,23 @@ const createBtn = document.querySelector('.createBtn'),
   destroyBtn = document.querySelector('.destroyBtn'),
   inputField = document.querySelector('.input');
 
-let userValue = null;
-function getInputValue(event) {
-  userValue = event.target.value
-  return userValue;
+function createBoxes(event) {
+  const boxesCount = inputField.value;
+
+  for (let i = 0; i < boxesCount; i++) {
+    const step = i * 10;
+    const gap = 20;
+    fieldForBoxes.innerHTML += `
+      <div style="
+        width: ${30 + step}px;
+        height: ${30 + step}px;
+        background-color: ${getRandomHexColor()};">
+      </div>
+    `;
+  }
+  inputField.value = '';
 }
 
-// function createBoxes(event) {
-//   console.log(event.target);
-// }
 
-userValue = inputField.addEventListener('change', getInputValue);
-console.log(userValue);
-// createBtn.addEventListener('click', createBoxes);
+createBtn.addEventListener('click', createBoxes);
+createBtn.addEventListener('click', createBoxes);
