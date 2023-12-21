@@ -15,10 +15,10 @@ const createBtn = document.querySelector('.createBtn'),
 function validateInput(value) {
 	let result = true;
 	if (value > 100 || value < 1) {
-		message.classList.add('visible');
+		message.textContent = "Your number must be bigger than 1 and less than 100";
 		!result;
 	} else {
-		message.classList.remove('visible');
+		message.textContent = '';
 		result;
 	}
 	return result;
@@ -28,17 +28,17 @@ function validateInput(value) {
 const createBoxes = () => {
 	destroyBoxes();
 	const boxesCount = inputField.value;
+
 	if (validateInput(boxesCount)) {
 		for (let i = 0; i < boxesCount; i++) {
 			const step = i * 10;
-			fieldForBoxes.innerHTML += `
-      <div class="box-item" style="
-        width: ${30 + step}px;
-        height: ${30 + step}px;
-		
-        background-color: ${getRandomHexColor()};"
-      ></div>
-    `;
+			const newBox = document.createElement('div');
+			newBox.classList.add('box-item');
+			newBox.style.width = `${30 + step}px`;
+			newBox.style.height = `${30 + step}px`;
+			newBox.style.backgroundColor = `${getRandomHexColor()}`
+
+			fieldForBoxes.insertAdjacentElement('beforeend', newBox);
 		}
 		inputField.value = '';
 	}

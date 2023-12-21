@@ -31,26 +31,26 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
+
 function addPictures(imageArray) {
-  // const markup = imageArray
-  //   .map((image) => {
-  //     return `<li class="gallery-item">
-  //                 <img class="gallery-image" src="${image.url}" alt="${image.alt}" width="360" height="300"/>
-  //             </li>`
+  // imageArray.forEach(image => {
+  //   gallery.innerHTML += `
+  //     <li class="gallery-item">
+  //       <img class="gallery-image" src="${image.url}" alt="${image.alt}" width="360" height="300"/>
+  //     </li>`;
+  // })
+  //   return imageArray;
 
-  //   })
-  //   .join("");
+  /* corected mistakes */
+  const markup = imageArray
+    .map((image) => {
+      return `<li class="gallery-item">
+                  <img class="gallery-image" src="${image.url}" alt="${image.alt}" width="360" height="300"/>
+              </li>`
+    })
+    .join("");
 
-  // return gallery.innerHTML = markup;
-
-  imageArray.forEach(image => {
-    gallery.innerHTML += `
-      <li class="gallery-item">
-        <img class="gallery-image" src="${image.url}" alt="${image.alt}" width="360" height="300"/>
-      </li>`;
-  })
-
-  return imageArray;
+  return gallery.insertAdjacentHTML('afterbegin', markup);
 }
 
 addPictures(images);

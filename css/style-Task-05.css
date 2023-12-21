@@ -42,3 +42,7 @@
 .change-color:hover{
     background-color: #6C8CFF;
 }
+.widget-title span{
+    display: block;
+    text-align: center;
+}

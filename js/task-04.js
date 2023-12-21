@@ -2,22 +2,21 @@
 const form = document.querySelector('.login-form');
 
 function sendForm(event) {
-    let resulObj = {};
+    let resultObj = {};
     event.preventDefault();
-    const mail = event.target.elements.email.value;
-    const password = event.target.elements.password.value;
+    const mailValue = event.target.elements.email.value;
+    const passwordValue = event.target.elements.password.value;
 
-    if (mail === '' || password === '') {
+    if (mailValue.trim() === '' || passwordValue.trim() === '') {
         alert('All form fields must be filled in');
     } else {
-        resulObj = {
-            mail: mail.trim(),
-            password: password.trim(),
+        resultObj = {
+            mailValue: mailValue.trim(),
+            passwordValue: passwordValue.trim(),
         };
+        console.log(resultObj);
+        form.reset();
     }
-    console.log(resulObj);
-    form.reset();
-
 }
 
 form.addEventListener('submit', sendForm);

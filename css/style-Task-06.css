@@ -60,8 +60,4 @@ button{
     position: absolute;
     left: 32px;
     bottom: 6px;
-    opacity: 0;
-}
-.visible{
-    opacity: 1;
 }
